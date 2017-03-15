@@ -36,8 +36,6 @@ import com.twilio.video.VideoClient;
 import com.twilio.video.VideoTrack;
 import com.twilio.video.VideoView;
 
-import org.apache.cordova.plugin.R;
-
 import android.content.Intent;
 
 import java.util.Map;
