@@ -39,7 +39,8 @@ import com.twilio.video.VideoView;
 import android.content.Intent;
 
 //import org.apache.cordova.plugin.R;
-import android.R;
+//import android.R;
+import com.example.test.R;
 
 import java.util.Map;
 
