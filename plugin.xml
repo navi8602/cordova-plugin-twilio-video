@@ -61,10 +61,32 @@
         <framework src="com.android.support:appcompat-v7:21+" />
         <framework src="src/android/twiliovideo.gradle" custom="true" type="gradleReference" />
         <dependency id="cordova-plugin-compat" />
+        
+        <resource-file src="src/android/res/drawable/ic_call_black_24dp.xml.xml" target="res/drawable/ic_call_black_24dp.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_call_end_white_24px.xml.xml" target="res/drawable/ic_call_end_white_24px.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_call_white_24px.xml.xml" target="res/drawable/ic_call_white_24px.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_mic_green_24px.xml.xml" target="res/drawable/ic_mic_green_24px.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_mic_off_red_24px.xml.xml" target="res/drawable/ic_mic_off_red_24px.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_switch_camera_512dp.xml.xml" target="res/drawable/ic_switch_camera_512dp.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_videocam_green_24px.xml.xml" target="res/drawable/ic_videocam_green_24px.xml.xml" />
+        <resource-file src="src/android/res/drawable/ic_videocam_off_red_24px.xml.xml" target="res/drawable/ic_videocam_off_red_24px.xml.xml" />
 
         <resource-file src="src/android/res/layout/activity_video.xml" target="res/layout/activity_video.xml" />
         <resource-file src="src/android/res/layout/content_video.xml" target="res/layout/content_video.xml" />
-    
+        
+        <resource-file src="src/android/res/mipmap-hdpi/ic_launcher.png" target="res/mipmap-hdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/mipmap-mdpi/ic_launcher.png" target="res/mipmap-mdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/mipmap-xhdpi/ic_launcher.png" target="res/mipmap-xhdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/mipmap-xxhdpi/ic_launcher.png" target="res/mipmap-xxhdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/mipmap-xxxhdpi/ic_launcher.png" target="res/mipmap-xxxhdpi/ic_launcher.png" />
+      
+        <resource-file src="src/android/res/values/colors.xml" target="res/values/colors.xml" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml" />
+        <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
+
+        <resource-file src="src/android/res/values-v21/styles.xml" target="res/values-v21/styles.xml" />
+        <resource-file src="src/android/res/values-w820dp/dimens.xml" target="res/values-w820dp/dimens.xml" />
 
     </platform>
 </plugin>
