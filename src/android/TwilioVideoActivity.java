@@ -55,6 +55,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
      * or the request to the token server.
      */
     private String accessToken;
+    private String roomId;
 
     /*
      * A Room represents communication between a local participant and one or more participants.
@@ -114,20 +115,18 @@ public class TwilioVideoActivity extends AppCompatActivity {
         audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
         Intent intent = getIntent();
-        final String token = intent.getStringExtra("token");
-        final String roomId = intent.getStringExtra("roomId");
-        Log.d(TAG, "TOKEN :"+token);
-        Log.d(TAG, "ROOMID: "+roomId);
-            
-        /*
-         * Check camera and microphone permissions. Needed in Android M.
-         */
-        setAccessToken(token);
-            
+
+        this.accessToken = intent.getStringExtra("token");
+        this.roomId =   intent.getStringExtra("roomId");
+
+        Log.d(TAG, "BEFORE REQUEST PERMISSIONS");
         if (!checkPermissionForCameraAndMicrophone()) {
+            Log.d(TAG, "REQUEST PERMISSIONS");
             requestPermissionForCameraAndMicrophone();
         } else {
+             Log.d(TAG, "PERMISSIONS OK. CREATE LOCAL MEDIA");
             createLocalMedia();
+            connectToRoom();
         }
 
         /*
@@ -140,8 +139,6 @@ public class TwilioVideoActivity extends AppCompatActivity {
         //          connectToRoom(roomId);
         //      }
         //   }.start();
-         connectToRoom(roomId);
-
     }
 
     @Override
@@ -157,7 +154,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
             if (cameraAndMicPermissionGranted) {
                 createLocalMedia();
-                //setAccessToken();
+                connectToRoom();
             } else {
                 Toast.makeText(this,
                         R.string.permissions_needed,
@@ -252,19 +249,11 @@ public class TwilioVideoActivity extends AppCompatActivity {
         localVideoView = primaryVideoView;
     }
 
-    private void setAccessToken(String token) {
-        // OPTION 1- Generate an access token from the getting started portal
-        // https://www.twilio.com/console/video/dev-tools/testing-tools
-        this.accessToken = token;
 
-        // OPTION 2- Retrieve an access token from your own web app
-        // retrieveAccessTokenfromServer();
-    }
-
-    private void connectToRoom(String roomName) {
+    private void connectToRoom() {
         setAudioFocus(true);
         ConnectOptions connectOptions = new ConnectOptions.Builder(accessToken)
-                .roomName(roomName)
+                .roomName(this.roomId)
                 .localMedia(localMedia)
                 .build();
         room = VideoClient.connect(this, connectOptions, roomListener());
@@ -313,13 +302,13 @@ public class TwilioVideoActivity extends AppCompatActivity {
         /*
          * This app only displays video for one additional participant per Room
          */
-        if (thumbnailVideoView.getVisibility() == View.VISIBLE) {
-            Snackbar.make(connectActionFab,
-                    "Multiple participants are not currently support in this UI",
-                    Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-            return;
-        }
+        // if (thumbnailVideoView.getVisibility() == View.VISIBLE) {
+        //     Snackbar.make(connectActionFab,
+        //             "Multiple participants are not currently support in this UI",
+        //             Snackbar.LENGTH_LONG)
+        //             .setAction("Action", null).show();
+        //     return;
+        // }
         participantIdentity = participant.getIdentity();
         //videoStatusTextView.setText("Participant "+ participantIdentity + " joined");
 
@@ -505,19 +494,6 @@ public class TwilioVideoActivity extends AppCompatActivity {
         };
     }
 
-    // private DialogInterface.OnClickListener connectClickListener(final EditText roomEditText) {
-    //     return new DialogInterface.OnClickListener() {
-
-    //         @Override
-    //         public void onClick(DialogInterface dialog, int which) {
-    //             /*
-    //              * Connect to room
-    //              */
-    //             connectToRoom(roomEditText.getText().toString());
-    //         }
-    //     };
-    // }
-
     private View.OnClickListener disconnectClickListener() {
         return new View.OnClickListener() {
             @Override
@@ -533,25 +509,6 @@ public class TwilioVideoActivity extends AppCompatActivity {
             }
         };
     }
-
-    // private View.OnClickListener connectActionClickListener() {
-    //     return new View.OnClickListener(){
-    //         @Override
-    //         public void onClick(View v) {
-    //             showConnectDialog();
-    //         }
-    //     };
-    // }
-
-    // private DialogInterface.OnClickListener cancelConnectDialogClickListener() {
-    //     return new DialogInterface.OnClickListener() {
-    //         @Override
-    //         public void onClick(DialogInterface dialog, int which) {
-    //             intializeUI();
-    //             alertDialog.dismiss();
-    //         }
-    //     };
-    // }
 
     private View.OnClickListener switchCameraClickListener() {
         return new View.OnClickListener() {
