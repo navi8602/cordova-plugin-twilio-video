@@ -408,11 +408,11 @@ public class TwilioVideoActivity extends AppCompatActivity {
                 ////videoStatusTextView.setText("Disconnected from " + room.getName());
                 TwilioVideoActivity.this.room = null;
                 // Only reinitialize the UI if disconnect was not called from onDestroy()
-                if (!disconnectedFromOnDestroy) {
-                    setAudioFocus(false);
-                    intializeUI();
-                    moveLocalVideoToPrimaryView();
-                }
+                // if (!disconnectedFromOnDestroy) {
+                //     setAudioFocus(false);
+                //     intializeUI();
+                //     moveLocalVideoToPrimaryView();
+                // }
             }
 
             @Override
