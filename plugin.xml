@@ -6,7 +6,7 @@
     <js-module name="TwilioVideo" src="www/TwilioVideo.js">
         <clobbers target="cordova.plugins.TwilioVideo" />
     </js-module>
-    
+
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="TwilioVideoIOS">
@@ -56,6 +56,6 @@
         </config-file>
         <source-file src="src/android/TwilioVideo.java" target-dir="src/org/apache/cordova/twiliovideo" />
         <source-file src="src/android/TwilioVideoActivity.java" target-dir="src/org/apache/cordova/twiliovideo" />
-        <framework src="platforms/android/twiliovideo.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/twiliovideo.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>
