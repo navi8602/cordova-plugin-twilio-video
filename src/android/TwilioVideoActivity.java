@@ -135,6 +135,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
          */
         intializeUI();
         new CountDownTimer(300, 300) {
+             public void onTick(long millisUntilFinished) { }
              public void onFinish() {
                  connectToRoom(roomId);
              }
