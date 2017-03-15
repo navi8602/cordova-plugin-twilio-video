@@ -38,7 +38,7 @@ import com.twilio.video.VideoView;
 
 import android.content.Intent;
 
-import org.apache.cordova.plugin.R;
+import org.apache.cordova.plugin.TwilioVideo.R;
 
 import java.util.Map;
 
@@ -118,11 +118,12 @@ public class TwilioVideoActivity extends AppCompatActivity {
         /*
          * Check camera and microphone permissions. Needed in Android M.
          */
+        setAccessToken(token);
+            
         if (!checkPermissionForCameraAndMicrophone()) {
             requestPermissionForCameraAndMicrophone();
         } else {
             createLocalMedia();
-            setAccessToken(token);
             connectToRoom(roomId);
         }
 
@@ -145,7 +146,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
             if (cameraAndMicPermissionGranted) {
                 createLocalMedia();
-                setAccessToken();
+                //setAccessToken();
             } else {
                 Toast.makeText(this,
                         R.string.permissions_needed,
