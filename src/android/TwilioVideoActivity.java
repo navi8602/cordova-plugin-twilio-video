@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -127,13 +128,19 @@ public class TwilioVideoActivity extends AppCompatActivity {
             requestPermissionForCameraAndMicrophone();
         } else {
             createLocalMedia();
-            connectToRoom(roomId);
         }
 
         /*
          * Set the initial state of the UI
          */
         intializeUI();
+        new CountDownTimer(300, 300) {
+             public void onFinish() {
+                 connectToRoom(roomId);
+             }
+          }.start();
+
+
     }
 
     @Override
