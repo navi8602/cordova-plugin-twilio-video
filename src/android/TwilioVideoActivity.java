@@ -70,7 +70,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
     /*
      * Android application UI elements
      */
-    private TextView videoStatusTextView;
+    //private TextView videoStatusTextView;
     private CameraCapturer cameraCapturer;
     private LocalMedia localMedia;
     private LocalAudioTrack localAudioTrack;
@@ -95,7 +95,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
         primaryVideoView = (VideoView) findViewById(R.id.primary_video_view);
         thumbnailVideoView = (VideoView) findViewById(R.id.thumbnail_video_view);
-        videoStatusTextView = (TextView) findViewById(R.id.video_status_textview);
+        //videoStatusTextView = (TextView) findViewById(R.id.video_status_textview);
 
         connectActionFab = (FloatingActionButton) findViewById(R.id.connect_action_fab);
         switchCameraActionFab = (FloatingActionButton) findViewById(R.id.switch_camera_action_fab);
@@ -313,7 +313,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
             return;
         }
         participantIdentity = participant.getIdentity();
-        videoStatusTextView.setText("Participant "+ participantIdentity + " joined");
+        //videoStatusTextView.setText("Participant "+ participantIdentity + " joined");
 
         /*
          * Add participant renderer
@@ -352,7 +352,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
      * Called when participant leaves the room
      */
     private void removeParticipant(Participant participant) {
-        videoStatusTextView.setText("Participant "+participant.getIdentity()+ " left.");
+        //videoStatusTextView.setText("Participant "+participant.getIdentity()+ " left.");
         if (!participant.getIdentity().equals(participantIdentity)) {
             return;
         }
@@ -389,7 +389,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
         return new Room.Listener() {
             @Override
             public void onConnected(Room room) {
-                videoStatusTextView.setText("Connected to " + room.getName());
+                //videoStatusTextView.setText("Connected to " + room.getName());
                 setTitle(room.getName());
 
                 for (Map.Entry<String, Participant> entry : room.getParticipants().entrySet()) {
@@ -400,12 +400,12 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
             @Override
             public void onConnectFailure(Room room, TwilioException e) {
-                videoStatusTextView.setText("Failed to connect");
+                //videoStatusTextView.setText("Failed to connect");
             }
 
             @Override
             public void onDisconnected(Room room, TwilioException e) {
-                videoStatusTextView.setText("Disconnected from " + room.getName());
+                ////videoStatusTextView.setText("Disconnected from " + room.getName());
                 TwilioVideoActivity.this.room = null;
                 // Only reinitialize the UI if disconnect was not called from onDestroy()
                 if (!disconnectedFromOnDestroy) {
@@ -451,23 +451,23 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
             @Override
             public void onAudioTrackAdded(Media media, AudioTrack audioTrack) {
-                videoStatusTextView.setText("onAudioTrackAdded");
+                //videoStatusTextView.setText("onAudioTrackAdded");
             }
 
             @Override
             public void onAudioTrackRemoved(Media media, AudioTrack audioTrack) {
-                videoStatusTextView.setText("onAudioTrackRemoved");
+                //videoStatusTextView.setText("onAudioTrackRemoved");
             }
 
             @Override
             public void onVideoTrackAdded(Media media, VideoTrack videoTrack) {
-                videoStatusTextView.setText("onVideoTrackAdded");
+                //videoStatusTextView.setText("onVideoTrackAdded");
                 addParticipantVideo(videoTrack);
             }
 
             @Override
             public void onVideoTrackRemoved(Media media, VideoTrack videoTrack) {
-                videoStatusTextView.setText("onVideoTrackRemoved");
+                //videoStatusTextView.setText("onVideoTrackRemoved");
                 removeParticipantVideo(videoTrack);
             }
 
