@@ -1,8 +1,10 @@
-allprojects {
-    repositories {
-        jcenter()
-    }
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
 }
 
-// The Video library resides on jcenter
-compile 'com.twilio:video-android:1.0.0-beta12'
+dependencies {
+    compile "com.twilio:video-android:1.0.0-beta12"
+}
