@@ -115,7 +115,9 @@ public class TwilioVideoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String token = intent.getStringExtra("token");
         String roomId = intent.getStringExtra("roomId");
-
+        Log.d(TAG, "TOKEN :"+token);
+        Log.d(TAG, "ROOMID: "+roomId);
+            
         /*
          * Check camera and microphone permissions. Needed in Android M.
          */
