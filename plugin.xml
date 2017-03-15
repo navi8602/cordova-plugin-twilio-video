@@ -49,7 +49,7 @@
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="TwilioVideoActivity" android:configChanges="orientation|screenSize">
+            <activity android:name="/org.apache.cordova.plugin.TwilioVideoActivity" android:configChanges="orientation|screenSize">
                 <intent-filter>
                     <action android:name="android.intent.action.MAIN" />
                     <category android:name="android.intent.category.LAUNCHER" />
