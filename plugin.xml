@@ -61,5 +61,10 @@
         <framework src="com.android.support:appcompat-v7:21+" />
         <framework src="src/android/twiliovideo.gradle" custom="true" type="gradleReference" />
         <dependency id="cordova-plugin-compat" />
+
+        <resource-file src="/src/android/res/layout/activity_video.xml" target="res/layout/activity_video.xml" />
+        <resource-file src="/src/android/res/layout/content_video.xml" target="res/layout/content_video.xml" />
+    
+
     </platform>
 </plugin>
