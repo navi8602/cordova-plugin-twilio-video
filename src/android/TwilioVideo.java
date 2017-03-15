@@ -41,24 +41,26 @@ public class TwilioVideo extends CordovaPlugin {
 	}
 
 	public void openRoom(final JSONArray args) {
+        try {
+    	 	final String token = args.getString(0);
+            final String roomId = args.getString(1);
+            final CordovaPlugin that = this;
+     		cordova.getThreadPool().execute(new Runnable() {
+                public void run() {
 
-	 	final String token = args.getString(0);
-        final String roomId = args.getString(1);
-
-
-        final CordovaPlugin that = this;
- 		cordova.getThreadPool().execute(new Runnable() {
-            public void run() {
-
-                Intent intentTwilioVideo = new Intent(that.cordova.getActivity().getApplicationContext(), TwilioVideoActivity.class);
-    			intentTwilioVideo.putExtra("token", token);
-                intentTwilioVideo.putExtra("roomId", roomId);
-                // avoid calling other phonegap apps
-                intentTwilioVideo.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
-                //that.cordova.startActivityForResult(that, intentTwilioVideo);
-                that.cordova.getActivity().startActivity(intentTwilioVideo);
-            }
-        });
+                    Intent intentTwilioVideo = new Intent(that.cordova.getActivity().getApplicationContext(), TwilioVideoActivity.class);
+        			intentTwilioVideo.putExtra("token", token);
+                    intentTwilioVideo.putExtra("roomId", roomId);
+                    // avoid calling other phonegap apps
+                    intentTwilioVideo.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
+                    //that.cordova.startActivityForResult(that, intentTwilioVideo);
+                    that.cordova.getActivity().startActivity(intentTwilioVideo);
+                }
+            });
+        } catch (JSONException e) {
+            //Log.e(TAG, "Invalid JSON string: " + json, e);
+            //return null;
+        }
     }
 
 
