@@ -115,7 +115,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String token = intent.getStringExtra("token");
-        final roomId = intent.getStringExtra("roomId");
+        final String roomId = intent.getStringExtra("roomId");
         Log.d(TAG, "TOKEN :"+token);
         Log.d(TAG, "ROOMID: "+roomId);
             
