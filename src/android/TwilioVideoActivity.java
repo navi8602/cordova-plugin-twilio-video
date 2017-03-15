@@ -1,4 +1,6 @@
 package org.apache.cordova.plugin;
+//import com.example.test.R;
+
 
 import android.Manifest;
 import android.content.Context;
@@ -38,9 +40,6 @@ import com.twilio.video.VideoView;
 
 import android.content.Intent;
 
-//import org.apache.cordova.plugin.R;
-//import android.R;
-import com.example.test.R;
 
 import java.util.Map;
 

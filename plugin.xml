@@ -34,6 +34,7 @@
         <dependency id="cordova-plugin-cocoapod-support" />
     </platform>
     <platform name="android">
+        <hook type="after_plugin_install" src="hooks/after_plugin_install/hook-add-r-import.js" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="TwilioVideo">
                 <param name="android-package" value="org.apache.cordova.plugin.TwilioVideo" />
