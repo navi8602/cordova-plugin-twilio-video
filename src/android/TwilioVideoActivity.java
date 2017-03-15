@@ -114,8 +114,8 @@ public class TwilioVideoActivity extends AppCompatActivity {
         audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
         Intent intent = getIntent();
-        String token = intent.getStringExtra("token");
-        String roomId = intent.getStringExtra("roomId");
+        final String token = intent.getStringExtra("token");
+        final roomId = intent.getStringExtra("roomId");
         Log.d(TAG, "TOKEN :"+token);
         Log.d(TAG, "ROOMID: "+roomId);
             
