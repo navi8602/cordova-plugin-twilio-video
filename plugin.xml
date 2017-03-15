@@ -60,5 +60,6 @@
         <framework src="com.google.android.gms:play-services-gcm:+" />
         <framework src="com.android.support:appcompat-v7:21+" />
         <framework src="src/android/twiliovideo.gradle" custom="true" type="gradleReference" />
+        <dependency id="cordova-plugin-compat" />
     </platform>
 </plugin>
