@@ -398,7 +398,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
             @Override
             public void onConnected(Room room) {
                 //videoStatusTextView.setText("Connected to " + room.getName());
-                setTitle(room.getName());
+                //setTitle(room.getName());
 
                 for (Map.Entry<String, Participant> entry : room.getParticipants().entrySet()) {
                     addParticipant(entry.getValue());
