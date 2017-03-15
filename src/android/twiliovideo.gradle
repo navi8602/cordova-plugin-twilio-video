@@ -1,17 +1,7 @@
-buildscript {
-    repositories {
-       jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
-    }
+repositories {
+    jcenter()
 }
 
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
 
 dependencies {
     compile "com.twilio:video-android:1.0.0-beta12"
