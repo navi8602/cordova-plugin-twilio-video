@@ -350,7 +350,9 @@ public class TwilioVideoActivity extends AppCompatActivity {
             thumbnailVideoView.setVisibility(View.VISIBLE);
             localVideoTrack.removeRenderer(primaryVideoView);
             localVideoTrack.addRenderer(thumbnailVideoView);
-            localVideoView = thumbnailVideoView;
+            if(localVideoView != null && thumbnailVideoView != null) {
+                localVideoView = thumbnailVideoView;
+            }
             thumbnailVideoView.setMirror(cameraCapturer.getCameraSource() ==
                     CameraSource.FRONT_CAMERA);
         }
