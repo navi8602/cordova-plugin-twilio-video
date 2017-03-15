@@ -38,7 +38,8 @@ import com.twilio.video.VideoView;
 
 import android.content.Intent;
 
-import org.apache.cordova.plugin.TwilioVideo.R;
+//import org.apache.cordova.plugin.TwilioVideo.R;
+import android.R;
 
 import java.util.Map;
 
