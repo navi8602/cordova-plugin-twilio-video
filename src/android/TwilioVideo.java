@@ -34,18 +34,16 @@ public class TwilioVideo extends CordovaPlugin {
     
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
-		
 		if (action.equals("openRoom")) {
 		   	this.openRoom(args);
-		    return true;
 		}
-
+        return true;
 	}
 
 	public void openRoom(final JSONArray args) {
 
-	 	String token = args.getString(0);
-        String roomId = args.getString(1);
+	 	final String token = args.getString(0);
+        final String roomId = args.getString(1);
 
 
         final CordovaPlugin that = this;
