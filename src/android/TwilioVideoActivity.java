@@ -283,8 +283,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
      * The actions performed during disconnect.
      */
     private void setDisconnectAction() {
-        connectActionFab.setImageDrawable(ContextCompat.getDrawable(this,
-                R.drawable.ic_call_end_white_24px));
+        connectActionFab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_call_end_white_24px));
         connectActionFab.show();
         connectActionFab.setOnClickListener(disconnectClickListener());
     }
@@ -517,7 +516,8 @@ public class TwilioVideoActivity extends AppCompatActivity {
                 if (room != null) {
                     room.disconnect();
                 }
-                intializeUI();
+                //intializeUI();
+                finish();
             }
         };
     }
