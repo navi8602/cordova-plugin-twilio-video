@@ -6,8 +6,7 @@
     <js-module name="TwilioVideo" src="www/TwilioVideo.js">
         <clobbers target="cordova.plugins.TwilioVideo" />
     </js-module>
-    <dependency id="cordova-plugin-cocoapod-support" />
-   
+    
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="TwilioVideoIOS">
@@ -30,6 +29,7 @@
         <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
             <string>$MICROPHONE_USAGE_DESCRIPTION</string>
         </config-file>
+        <dependency id="cordova-plugin-cocoapod-support" />
     </platform>
 
     <platform name="android">
