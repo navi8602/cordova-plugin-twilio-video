@@ -79,7 +79,7 @@ public class TwilioVideoActivity extends AppCompatActivity {
     private FloatingActionButton switchCameraActionFab;
     private FloatingActionButton localVideoActionFab;
     private FloatingActionButton muteActionFab;
-    private android.support.v7.app.AlertDialog alertDialog;
+    //private android.support.v7.app.AlertDialog alertDialog;
     private AudioManager audioManager;
     private String participantIdentity;
 
