@@ -8,6 +8,7 @@ import org.apache.cordova.LOG;
 import org.apache.cordova.PermissionHelper;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -56,7 +57,8 @@ public class TwilioVideo extends CordovaPlugin {
                 intentTwilioVideo.putExtra("roomId", roomId);
                 // avoid calling other phonegap apps
                 intentTwilioVideo.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
-                that.cordova.startActivityForResult(that, intentTwilioVideo);
+                //that.cordova.startActivityForResult(that, intentTwilioVideo);
+                that.cordova.startActivity(intentTwilioVideo);
             }
         });
     }

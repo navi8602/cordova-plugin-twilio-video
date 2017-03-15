@@ -18,7 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.JsonObject;
+
 import com.twilio.video.RoomState;
 import com.twilio.video.VideoRenderer;
 import com.twilio.video.TwilioException;
@@ -37,6 +37,8 @@ import com.twilio.video.VideoTrack;
 import com.twilio.video.VideoView;
 
 import android.content.Intent;
+
+import org.apache.cordova.plugin.R;
 
 import java.util.Map;
 
