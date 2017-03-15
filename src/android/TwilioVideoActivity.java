@@ -424,7 +424,8 @@ public class TwilioVideoActivity extends AppCompatActivity {
 
             @Override
             public void onParticipantDisconnected(Room room, Participant participant) {
-                removeParticipant(participant);
+                finish();
+                //removeParticipant(participant);
             }
 
             @Override
