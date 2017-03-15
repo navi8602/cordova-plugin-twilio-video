@@ -46,8 +46,8 @@ public class TwilioVideo extends CordovaPlugin {
             final String roomId = args.getString(1);
             final CordovaPlugin that = this;
 
-            Log.e("TOKEN", token);
-            Log.e("ROOMID", roomId);
+            LOG.d("TOKEN", token);
+            LOG.d("ROOMID", roomId);
      		cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
 
