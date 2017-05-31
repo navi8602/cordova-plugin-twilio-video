@@ -23,6 +23,7 @@
             <source url="https://github.com/twilio/cocoapod-specs" />
         </pods-config>
         <pod name="TwilioVideo" version="1.0.0-beta10" />
+
         <dependency id="cordova-plugin-cocoapod-support" />
     </platform>
     <platform name="android">
