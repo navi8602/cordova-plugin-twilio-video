@@ -25,11 +25,11 @@
         <pod name="TwilioVideo" version="1.0.0-beta10" />
         <preference name="CAMERA_USAGE_DESCRIPTION" />
         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-            <string>$CAMERA_USAGE_DESCRIPTION</string>
+            <string>Для аудио или видео консультации с врачем</string>
         </config-file>
         <preference name="MICROPHONE_USAGE_DESCRIPTION" />
         <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
-            <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+            <string>Для аудио или видео консультации с врачем</string>
         </config-file>
         <dependency id="cordova-plugin-cocoapod-support" />
     </platform>
